@@ -10,18 +10,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script> var userInfo = {"email": "test@api2.com",
+  <script> var userInfo = {
+    "email": "test@api2.com",
     "firstName": "Test 1",
     "middleName": "",
     "firstLastName": "Jhon",
     "secondLastName":"Doe",
-    "curp":"TESTCURP151790",
-    "rfc":"TESTRFC151790",
+    "curp":"TESTCURP121790",
+    "rfc":"TESTRFC121790",
     "title":"Mr.",
     "maritalStatus":"S",
     "gender":"M",
     "satRegime":"PM",
-    "birthDate":"1517900",
+    "birthDate":"121790",
     "userPwd": "Borreguito1"};
 var headerContents = {
         "req_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodHRwczovL29jZG1vbnN0ZXIuZ2l0aHViLmlvLyIsImlhdCI6MTYzODgxNTQ2NCwiZXhwIjoxNjcwMzUxNDY0fQ.TRyn3EB7AlcKPw4S9sWXny5N3ziSqGQ38RNnIz0FYv0"
@@ -30,7 +31,7 @@ $.ajax({
     type: 'POST',
     url: "https://eggplant-organized-grouse.glitch.me/api/register",
     headers: headerContents,
-    data: JSON.stringify(userInfo)
+    data: userInfo
 }).done(function(data) { 
     $( ".contactanos" ).html( JSON.stringify(data) );
 });</script>
