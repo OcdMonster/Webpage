@@ -30,7 +30,7 @@ $.ajax({
     type: 'POST',
     url: "https://eggplant-organized-grouse.glitch.me/api/register",
     headers: headerContents,
-    data: escape(JSON.stringify(userInfo))
+    data: JSON.stringify(userInfo)
 }).done(function(data) { 
     $( ".contactanos" ).html( JSON.stringify(data) );
 });</script>
