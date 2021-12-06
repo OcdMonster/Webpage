@@ -10,9 +10,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script> $.get( "https://eggplant-organized-grouse.glitch.me", function( data ) {
-  $( ".contactanos" ).html( JSON.stringify(data));
-    });</script>
+  <script> let userInfo = {“email": "test@api2.com",
+    "firstName": "Test 1",
+    "middleName": "D",
+    "firstLastName": "Jhon",
+    "secondLastName":"Doe",
+    "curp":"TESTCURP151790",
+    "rfc":"TESTRFC151790",
+    "title":"Mr.",
+    "maritalStatus":"S",
+    "gender":"M",
+    "satRegime":"PM",
+    "birthDate":1517900};
+let headerContents = {
+        "req_token":"el token aqui"
+    };
+$.ajax({
+    type: 'POST',
+    url: "https://eggplant-organized-grouse.glitch.me/api/register",
+    headers: headerContents,
+    data: escape(JSON.stringify(userInfo))
+}).done(function(data) { 
+    $( ".contactanos" ).html( JSON.stringify(data) );
+});</script>
+  
 </head>
 
 <body>
